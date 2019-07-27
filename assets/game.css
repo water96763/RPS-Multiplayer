@@ -15,9 +15,10 @@ h1 {
     background-color: tan;
 }
 
-#humanInfo {
+#leftInfo {
     background-color: green;
     font-size: 20px;
+    text-align: center;
 }
 
 #choices {
@@ -26,9 +27,10 @@ h1 {
 
 }
 
-#computerInfo {
+#rightInfo {
     background-color: yellow;
     font-size: 20px;
+    text-align: center;
 
 }
 #rock {
@@ -46,3 +48,11 @@ h1 {
     background-color: blue;
 }
 
+#children {
+    font-size: 20px;
+    text-align: center;
+}
+form {
+    background-color: white;
+    text-align: center;
+}
