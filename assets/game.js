@@ -13,52 +13,53 @@ function randomComputerChoice() {
     let computerArray = ["r", "p", "s"];
     let randomIndex = Math.floor(Math.random() * 3);
     
-    
         if (computerArray[randomIndex] = "r") {
             $("#computerChoice").prepend('<img src="rock image.jpg" id="rock" width="25%"/>'); 
-              }
+        }
         else if (computerArray[randomIndex] = "p") {
             $("#computerChoice").prepend('<img src="paper picture.jfif" id="paper" width="30%"/>');
-             }
+        }
         else {
             $("#computerChoice").prepend('<img src="scissors pic.jpg" id="scissors" width="25%"/>');
-         }
+        }
         return computerArray[randomIndex];    
 }
 
-function rpsGame(userChoice) {
-    let compChoice = randomComputerChoice();
-  }
-rpsGame("rock");
-console.log("userChoice " +  userChoice);
-console.log("computerChoice " + compChoice);
 
 
 function userChoices() {
-
+    
     $("#rock").click (function() {
-    rpsGame("rock");   
-    $("#yourChoice").prepend('<img src="rock image.jpg" id="rock" width="25%"/>');
-
+        rpsGame("rock");
+        userChoice = "rock";   
+        $("#yourChoice").prepend('<img src="rock image.jpg" id="rock" width="25%"/>');
+        
     });
-
+    
     $("#paper").click (function() {
-    rpsGame("paper");
- $("#yourChoice").prepend('<img src="paper picture.jfif" id="paper" width="30%"/>');
-
+        rpsGame("paper");
+        userChoice = "paper";
+        $("#yourChoice").prepend('<img src="paper picture.jfif" id="paper" width="30%"/>');
+        
     });
     $("#scissors").click (function() {
-    rpsGame("scissors");
- $("#yourChoice").prepend('<img src="scissors pic.jpg" id="scissors" width="25%"/>');
-
+        rpsGame("scissors");
+        userChoice = "scissors";
+        $("#yourChoice").prepend('<img src="scissors pic.jpg" id="scissors" width="25%"/>');
+        
     });
 }
+function rpsGame(userChoice) {
+    let compChoice = randomComputerChoice();
+  }
+console.log("userChoice " +  userChoice);
+console.log("computerChoice " + compChoice);
 userChoices();
 $("#start").click (function() {
     // startGame();
     instructions.style.display = "none";
     game.style.display = "block";
-    });
+});
 
 
 // startGame()
