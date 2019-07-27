@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="inprogress.css">
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <title>Rock Paper Scissors!</title>
+</head>
+<body>
+    
+    <h1>Rock, Paper, and Scissors!</h1>
+
+    <div class="container-fluid" id="instructions">In this game, you will play against a computer.  Choose your weapon, and see if you win!<br><br><button id="start">Let's play Rock Paper Scissors!</button></div>
+
+    <div class="container" id="game" style="display: none">
+        <div class="row">
+            <div class="col-md-4" id="humanInfo">
+                
+                <span id="userScore">User Score</span>
+                <div id = "yourChoice">Your choice</div>
+            </div>
+            <div class="col-md-4" id="choices">
+                    <button><img src="rock image.jpg" alt="Rock" id="rock" width="25%"></button>
+                    <button><img src="paper picture.jfif" alt="Paper" id="paper" width="30%"></button>
+                    <button><img src="scissors pic.jpg" id="scissors" alt="Scissors" width="25%"></button>
+            </div>
+            <div class="col-md-4" id="computerInfo">
+                    
+                    <span id="computerScore">Computer Score</span>
+                    <div id="computerChoice">Computer choice</div>
+            </div>
+        </div>
+    </div>
+    <script src="inprogress.js"></script> 
+</body>
+</html>

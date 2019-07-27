@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+    border-top: 20px;
+    border-color: aqua;
+    background-color: red;
+    padding: 20px;
+}
+
+#instructions {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+}
+* {
+    background-color: tan;
+}
+
+#humanInfo {
+    background-color: green;
+    font-size: 20px;
+}
+
+#choices {
+    background-color: purple;
+    text-align: center;
+
+}
+
+#computerInfo {
+    background-color: yellow;
+    font-size: 20px;
+
+}
+#rock {
+    padding: 5px;
+    background-color: blue;
+}
+
+#paper {
+    padding: 5px;
+    background-color: blue;
+}
+
+#scissors {
+    padding: 5px;
+    background-color: blue;
+}
+
