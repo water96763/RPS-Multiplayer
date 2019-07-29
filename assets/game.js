@@ -7,48 +7,62 @@ var firebaseConfig = {
   messagingSenderId: "72398744962",
   appId: "1:72398744962:web:e655a0cd5d8ad5c4"
 };
-// Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
-  
 let database = firebase.database();
 
 let playerOneScore = 0;
 let playerTwoScore = 0;
-let playerOneWeapon = "";
-// let playerTwoChoice = "";
-let playerOneScoreSpan = document.getElementById("ScoreOne");
-let playerTwoScoreSpan = document.getElementById("ScoreTwo");
-let playerOneChoiceDiv = document.getElementById("playerOneChoice");
-let playerTwoChoiceDiv = document.getElementById("playerTwoChoice");
-// let rockDiv = document.getElementById("rock");
-// let paperDiv = document.getElementById("paper");
-// let scissorsDiv = document.getElementById("scissors");
-let connectionsRef = database.ref("/connections");
-let connectedRef = database.ref(".info/connected");
-let playerOneName;
+let playerOneScoreSpan = document.getElementById("scoreOne");
+let playerTwoScoreSpan = document.getElementById("scoreTwo");
+let weapon = "";
+let name= "";
+// let connectionsRef = database.ref("/connections");
+// let connectedRef = database.ref(".info/connected");
 
-connectedRef.on("value", function(snap) {
-  if (snap.val()) {
-    let con = connectionsRef.push(true);
-    con.onDisconnect().remove();
-  }
-});
-connectionsRef.on("value", function(snapshot) {
-  $("#children").text(snapshot.numChildren());
+
+$("#toServer").on("click", function(event) {
+  event.preventDefault();
+  name = $("#name").val().trim();
+  weapon = $("input[name='weapon']:checked").val().trim();
+  database.ref().set({
+    name: name,
+    weapon: weapon,
+  });
 });
 
- $("#toServer").on("click", function(event) {
-    event.preventDefault();
-    playerOneName = $("#player-name").val().trim(); 
-    alert("Welcome!");
-    $("#nameOne").val("");
-    $("nameOne").hide();
-    $("#toServer").hide();
-    database.ref().set({
-      playerOne: playerOneName,
 
-  })
- });
+// connectedRef.on("value", function(snap) {
+//   if (snap.val()) {
+//     let con = connectionsRef.push(true);
+//     con.onDisconnect().remove();
+//   }
+// });
+// connectionsRef.on("value", function(snapshot) {
+//   $("#children").text(snapshot.numChildren());
+// });
+
+database.ref().on("value", function(snapshot) {
+  console.log(snapshot.val().name);
+  console.log(snapshot.val().weapon);
+  console.log(snapshot.val());
+}, function(errorObject) {
+  console.log("Errors handled: " + errorObject.code);
+});
+
+
+//  $("#toServer").on("click", function(event) {
+//     event.preventDefault();
+//     playerOneName = $("#player-name").val().trim(); 
+//     alert("Welcome!");
+//     $("#nameOne").val("");
+//     $("nameOne").hide();
+//     $("#toServer").hide();
+//     database.ref().set({
+//       playerOne: playerOneName,
+
+//   })
+//  });
 
 
   
