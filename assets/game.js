@@ -1,14 +1,14 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyD_VGtjv7kDNL7tHP4mXxUcQTqCUitvi-s",
-    authDomain: "rps-database-c3986.firebaseapp.com",
-    databaseURL: "https://rps-database-c3986.firebaseio.com",
-    projectId: "rps-database-c3986",
-    storageBucket: "",
-    messagingSenderId: "72398744962",
-    appId: "1:72398744962:web:e655a0cd5d8ad5c4"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  apiKey: "AIzaSyD_VGtjv7kDNL7tHP4mXxUcQTqCUitvi-s",
+  authDomain: "rps-database-c3986.firebaseapp.com",
+  databaseURL: "https://rps-database-c3986.firebaseio.com",
+  projectId: "rps-database-c3986",
+  storageBucket: "",
+  messagingSenderId: "72398744962",
+  appId: "1:72398744962:web:e655a0cd5d8ad5c4"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
   
 let database = firebase.database();
 
@@ -39,19 +39,19 @@ connectionsRef.on("value", function(snapshot) {
 
  $("#toServer").on("click", function(event) {
     event.preventDefault();
-    let playerOneName = $("#toServer").val().trim(); 
+    playerOneName = $("#player-name").val().trim(); 
     alert("Welcome!");
     $("#nameOne").val("");
     $("nameOne").hide();
     $("#toServer").hide();
-
- });
-
-
-  database.ref("/playerData").set({
+    database.ref().set({
       playerOne: playerOneName,
 
   })
+ });
+
+
+  
   
 
 // database.ref().on()
@@ -107,7 +107,7 @@ connectionsRef.on("value", function(snapshot) {
 // userChoices();
 
 
-$("#start").click (function() {
+$("#startPage").click (function() {
     // startGame();
     instructions.style.display = "none";
     game.style.display = "block";
